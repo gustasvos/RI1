@@ -159,20 +159,47 @@ function compara(arr) {
     let maiorv = arr[0].velocidade
     let maiorr = arr[0].resistencia
 
-    for (i=1; i < arr.length; i++) {
-        if (arr[i].forca > maiorf) {
-            maiorf = arr[i]
-        }
-        if (arr[i].velocidade > maiorv) {
-            maiorv = arr[i]
-        }
-        if (arr[i].resistencia > maiorr) {
-            maiorr = arr[i]
+    for (i=0; i < arr.length; i++) {
+        for (let j=0; j < arr.length; j++) {
+            if (i == j) continue
+
+            console.log('\nCOMPARAÇÃO ENTRE:\n' + arr[i].descricao() + '\n' + arr[j].descricao())
+
+            if (arr[i].forca > arr[j].forca) {
+                maiorf = arr[i]
+                console.log(maiorf.codinome + " É mais forte que: " + arr[j].codinome)
+            }
+            else {
+                console.log(arr[j].codinome + " É mais forte que: " + arr[i].codinome)
+            }
+            
+            if (arr[i].velocidade > arr[j].velocidade) {
+                maiorv = arr[i]
+                console.log(maiorv.codinome + " É mais rápido que: " + arr[j].codinome)
+            }
+            else {
+                console.log(arr[j].codinome + " É mais rápido que: " + arr[i].codinome)
+            }
+
+            if (arr[i].forca > arr[j].forca) {
+                maiorr = arr[i]
+                console.log(maiorr.codinome + " É mais resistente que: " + arr[j].codinome)
+            }
+            else {
+                console.log(arr[j].codinome + " É mais resistente que: " + arr[i].codinome)
+            }
+
+            // if (arr[i].velocidade > maiorv) {
+            //     maiorv = arr[i]
+            // }
+            // if (arr[i].resistencia > maiorr) {
+            //     maiorr = arr[i]
+            // }
         }
     }
-    console.log("MAIOR FORÇA: \n" + maiorf.descricao())
-    console.log("MAIOR VELOCIDADE: \n" + maiorv.descricao())
-    console.log("MAIOR RESISTÊNCIA: \n" + maiorr.descricao())
+    // console.log("MAIOR FORÇA: \n" + maiorf.descricao())
+    // console.log("MAIOR VELOCIDADE: \n" + maiorv.descricao())
+    // console.log("MAIOR RESISTÊNCIA: \n" + maiorr.descricao())
 }
 
 compara(personagens)
