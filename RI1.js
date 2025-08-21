@@ -181,7 +181,7 @@ function compara(arr) {
                 console.log(arr[j].codinome + " É mais rápido que: " + arr[i].codinome)
             }
 
-            if (arr[i].forca > arr[j].forca) {
+            if (arr[i].resistencia > arr[j].resistencia) {
                 maiorr = arr[i]
                 console.log(maiorr.codinome + " É mais resistente que: " + arr[j].codinome)
             }
